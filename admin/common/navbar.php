@@ -9,7 +9,7 @@
         <a href="../dashboard/index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../veiuclos/index.php" class="nav-link">Cadastrar Veiculos</a>
+        <a href="../report-transacs/index.php" class="nav-link">Transactions</a>
       </li>
     </ul>
 

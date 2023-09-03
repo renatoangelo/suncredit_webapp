@@ -22,13 +22,13 @@ include_once '../common/header.php';
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../login/index.php"><b>Frota</b>Sys</a>
+    <a href="../login/index.php"><b>Sun</b>Credit</a>
   </div>
   <!-- /.login-logo -->
 
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">ATUALIZAR A SENHA</p>
+      <p class="login-box-msg">UPDATE PASSWORD</p>
 
       <?php
 

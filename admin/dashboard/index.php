@@ -22,7 +22,7 @@ include_once '../common/header.php';
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"><i class="fa-solid fa-gauge"></i> FrotaSys - DashBoard</h1>
+            <h1 class="m-0">Overview</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -43,7 +43,7 @@ include_once '../common/header.php';
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-dark">
               <div class="inner">
                 <h3>1500</h3>
 

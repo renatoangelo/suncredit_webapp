@@ -24,40 +24,28 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          
+
+          <li class="nav-item">
+            <a href="../veiuclos/" class="nav-link">
+              <i class="fa-solid fa-circle-notch"></i>
+              <p>&nbsp;&nbsp; Dashboard</p>
+            </a>
+          </li>
 
                <li class="nav-item">
             <a href="../veiculos/" class="nav-link">
             <!--<i class="nav-icon fas fa-file"></i>-->
-            <i class="fa-solid fa-car-side"></i>
-              <p>&nbsp;&nbsp; Veiculos</p>
+            <i class="fa-solid fa-square-plus"></i>
+              <p>&nbsp;&nbsp; Buy</p>
             </a>
           </li>
 
           <li class="nav-item">
             <a href="../veiculos/" class="nav-link">
-              <i class="nav-icon fas fa-car"></i>
-              <p>Adicionar Veiculos</p>
+              <i class="fa-solid fa-square-minus"></i>
+              <p>&nbsp;&nbsp; Sell</p>
             </a>
           </li>
-
-          
-          <li class="nav-item">
-            <a href="../dashboard/" class="nav-link">
-            <!--<i class="nav-icon fas fa-file"></i>-->
-            <i class="fa-solid fa-id-card"></i>
-              <p>&nbsp;&nbsp; Motorista</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="../veiuclos/" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>Adicionar Motorista</p>
-            </a>
-          </li>
-
-
 
         </ul>
       </nav>

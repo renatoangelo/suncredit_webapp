@@ -6,7 +6,7 @@ include_once '../common/header.php';
 ?>
 <style>
 body {
-  background-image: url('../dist/img/background.jpg');
+  background-image: url('../dist/img/background.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@ body {
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../login/"><b>Frota</b>System</a>
+    <a href="../login/"><b>SunCredit</b></a>
   </div>
   <!-- /.login-logo -->
 

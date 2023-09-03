@@ -12,11 +12,89 @@ $mail = new PHPMailer(true);
 include_once '../common/header.php';
 ?>
 </head>
+<style>
+ .login-page {
+    background-color: #0E031E !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  label {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500 !important;
+  }
+
+  .inputs {
+    background-color: #1B0C30;
+    border-radius: 6px;
+    height: 56px;
+    width: 100%;
+    margin: 0;
+    color: black;
+    border: none;
+    padding: 15px;
+  }
+
+  .submit {
+    width: 100%;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    font-weight: 600;
+    background: #2ACD8B;
+    color: white;
+    border: none;
+  }
+
+  .login-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-logo > div {
+    background-color: #1B0C30 !important;
+    width: 120px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .login-logo img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .login-logo p {
+    display: block;
+    color: #fff !important;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+
+  .forgot-password {
+    color: #fff;
+    display: block;
+    text-align: right;
+    font-size: 16px;
+    margin: 10px 0 32px;
+  }
+
+  .forgot-password:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+</style>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <div class="login-logo">
-    <a href="../login/index.php"><b>Frota</b>Sys</a>
-  </div>
+        <div class="login-logo">
+          <div class="mb-2">
+            <img src="../dist/img/sun-credit.svg" />
+          </div>
+          <p>Forgot Password</p>
+        </div>
   <!-- /.login-logo -->
 
 <?php
@@ -101,42 +179,33 @@ if(!empty($dados['recovery'])) {
 
 ?>
 
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Insira seu email para recuperar sua senha.</p>
-
+  <div>
+    <div>
       <?php
         if (isset($msg_output)) {
           echo $msg_output;
         }
       ?>
-      <form action="" method="post">
-      
+      <form action="" method="post"> 
       <?php 
       $email = "";
       if(isset($dados['email'])) { 
         $email = $dados['email'];
       }
       ?>
-        <div class="input-group mb-3">
-          <input type="email" name="email" value="<?php echo $email ?>" class="form-control" placeholder="e-mail">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
+        <div class="fields mb-3">
+          <label>Email</label>
+          <input type="email" name="email" value="<?php echo $email ?>" class="inputs" placeholder="e-mail">
         </div>
         <div class="row">
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block" value="recovery" name="recovery">Solicitar Nova Senha</button>
+          <div class="col-12 mb-3">
+            <button type="submit" class="submit" value="recovery" name="recovery">Request New Password</button>
           </div>
           <!-- /.col -->
-          <div class="col-12">
-            <div class="icheck-primary">
+          <div class="col-12 text-center">
               <label for="remember">
-                Lembrou a Senha? <a href="../login/index.php">Faça seu Login</a>
+                Remember the password? <a href="../login/index.php">Do Sign In</a>
               </label>
-            </div>
           </div>
           <!-- /.col -->
         </div>

@@ -87,7 +87,7 @@ include("../include/default.php");
                       <td><?php echo $row_transacs['description']; ?></td>
                       <td>$<?php echo $row_transacs['amount']; ?></td>
                       <td><span class="tag tag-success"><?php echo $row_transacs['date']; ?></span></td>
-                      <td><a class="btn bg-gradient-info" href=<?php echo URLADMIN . "report-transacs/receipts.php?id=" . $row_transacs['id']; ?> role="button"><i class="fa-solid fa-pen-to-square"></i> See Receipts</a></td>
+                      <td><a class="btn bg-gradient-info" href=<?php echo URLADMIN . "/report-transacs/receipts.php?id=" . $row_transacs['id']; ?> role="button"><i class="fa-solid fa-pen-to-square"></i> See Receipts</a></td>
                     </tr>
                     <?php
                       }

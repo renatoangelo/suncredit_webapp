@@ -24,7 +24,7 @@ include_once '../common/header.php';
     height: 56px;
     width: 100%;
     margin: 0;
-    color: black;
+    color: #fff;
     border: none;
     padding: 15px;
   }

@@ -37,7 +37,7 @@ include("../include/default.php");
         <div class="card card-primary">
           <!-- .card-header -->
           <div class="card-header">
-            <h3 class="card-title"><i class="fa-solid fa-house"></i>My Transactions</h3>
+            <h3 class="card-title"><i class="fa-solid fa-house"></i>My Transaction ID XXX</h3>
           </div>
           <!-- table start -->
           <!-- /.row -->
@@ -61,33 +61,22 @@ include("../include/default.php");
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0" style="height: 300px;">
-                <table class="table table-head-fixed text-nowrapc table-hover">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Details</th>
-                      <th>Slug</th>
-                      <th>Data Cadastro</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
                   <?php
-                    $query_imoveis = "SELECT id, title, slug, created_at FROM real_estates";
+                    $query_reports = "SELECT * FROM real_estates";
 
-                    $result_imoveis = $conn->prepare($query_imoveis);
-                    $result_imoveis->execute();
+                    $result_transacs = $conn->prepare($query_reports);
+                    $result_transacs->execute();
 
-                      if(($result_imoveis) and ($result_imoveis->rowCount() != 0)){
+                      if(($result_transacs) and ($result_transacs->rowCount() != 0)){
 
-                      while($row_imoveis = $result_imoveis->fetch(PDO::FETCH_ASSOC)) {
+                      while($row_transacs = $result_transacs->fetch(PDO::FETCH_ASSOC)) {
                     ?>
                     <tr>
-                      <td><?php echo $row_imoveis['id']; ?></td>
-                      <td><?php echo $row_imoveis['title']; ?></td>
-                      <td><?php echo $row_imoveis['slug']; ?></td>
-                      <td><span class="tag tag-success"><?php echo $row_imoveis['created_at']; ?></span></td>
-                      <td><a class="btn bg-gradient-info" href=<?php echo URLADMIN . "imoveis/edit.php?id=" . $row_imoveis['id']; ?>" role="button"><i class="fa-solid fa-pen-to-square"></i> See Receipts</a></td>
+                      <td><?php echo $row_transacs['id']; ?></td>
+                      <td><?php echo $row_transacs['title']; ?></td>
+                      <td><?php echo $row_transacs['slug']; ?></td>
+                      <td><span class="tag tag-success"><?php echo $row_transacs['created_at']; ?></span></td>
+                      <td><a class="btn bg-gradient-info" href=<?php echo URLADMIN . "report-transacs/receipt.php?id=" . $row_transacs['id']; ?>" role="button"><i class="fa-solid fa-pen-to-square"></i> See Receipts</a></td>
                     </tr>
                     <?php
                       }

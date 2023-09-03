@@ -1,10 +1,10 @@
 
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2021-2023 <a href="https://renatoangelo.com.br">RenatoAngelo.com.br</a>.</strong>
-    Todos os direitos reservados à <b>Frota</b>Sys.
+    <strong>Copyright &copy; 2021-2023 <a href="https://devinsider.com.br">SunCredit - DevInsider</a>.</strong>
+    All right reserved to <b>Sun</b>Credit.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
+      <b>Version</b> Alfa-1.1.0
     </div>
   </footer>
 

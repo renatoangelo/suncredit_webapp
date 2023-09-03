@@ -35050,7 +35050,6 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .login-card-body .input-group .input-group-text,
 .register-card-body .input-group .input-group-text {
-  background-color: transparent;
   border-bottom-right-radius: 0.25rem;
   border-left: 0;
   border-top-right-radius: 0.25rem;

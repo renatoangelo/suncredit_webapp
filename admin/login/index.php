@@ -14,6 +14,24 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.inputs {
+  background-color: #1B0C30;
+  border-radius: 6px;
+  height: 56px;
+  width: 335px;
+  margin: 5px;
+  color: black;
+}
+
+.submit {
+  width: 335px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #2ACD8B;
+  color: white;
+}
 </style>
 </head>
 <body class="hold-transition login-page">
@@ -71,8 +89,8 @@ if(!empty($dados['sendlogin'])) {
 ?>
 
 
-  <div class="card">
-    <div class="card-body login-card-body">
+  <div class="card bg-dark">
+    <div class="card-body bg-dark">
       <p class="login-box-msg">Faça seu LogIn</p>
 
       <?php
@@ -83,41 +101,22 @@ if(!empty($dados['sendlogin'])) {
       ?>
       <form action="" method="post">
         <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Email" value="<?php if(isset($dados['email'])) { echo $dados['email']; } ?>">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
+          <input type="email" name="email" class="inputs" placeholder="Email" value="<?php if(isset($dados['email'])) { echo $dados['email']; } ?>">
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Senha" value="<?php if(isset($dados['password'])) { echo $dados['password']; } ?>">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
+          <input type="password" name="password" class="inputs" placeholder="Password" value="<?php if(isset($dados['password'])) { echo $dados['password']; } ?>">
         </div>
+        <p class="mb-1">
+        <a href="forgot_password.php">Esqueci minha Senha</a>
+        </p>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember" name="remember">
-              <label for="remember">
-                Mantenha conectado
-              </label>
-            </div>
-          </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" name="sendlogin" value="access" class="btn btn-primary btn-block">Logar</button>
+            <button type="submit" name="sendlogin" value="access" class="submit">Logar</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
-
-      <p class="mb-1">
-        <a href="forgot_password.php">Esqueci minha Senha</a>
-      </p>
     </div>
     <!-- /.login-card-body -->
   </div>

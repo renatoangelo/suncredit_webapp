@@ -47,6 +47,15 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="../report-transacs/" class="nav-link">
+              <i class="fa-solid fa-square-minus"></i>
+              <p>&nbsp;&nbsp; Transactions</p>
+            </a>
+          </li>
+
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

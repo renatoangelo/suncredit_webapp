@@ -1,5 +1,6 @@
 <?php
 include("../include/default.php");
+$key = filter_input(INPUT_GET, "id", FILTER_DEFAULT);
 ?>
 </head>
 
@@ -37,7 +38,7 @@ include("../include/default.php");
         <div class="card card-primary">
           <!-- .card-header -->
           <div class="card-header">
-            <h3 class="card-title"><i class="fa-solid fa-house"></i>My Transaction ID XXX</h3>
+            <h3 class="card-title"><i class="fa-solid fa-receipt"></i> My Transaction # <?=$key;?></h3>
           </div>
           <!-- table start -->
           <!-- /.row -->
@@ -45,38 +46,38 @@ include("../include/default.php");
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"><i class="fa-solid fa-list"></i> List</h3>
+                <!-- <h3 class="card-title"><i class="fa-solid fa-list"></i> List</h3> -->
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                    <!-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default">
                         <i class="fas fa-search"></i>
                       </button>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0" style="height: 300px;">
                   <?php
-                    $query_reports = "SELECT * FROM real_estates";
+                    $query_reports = "SELECT * FROM transactions WHERE id=$key";
 
-                    $result_transacs = $conn->prepare($query_reports);
-                    $result_transacs->execute();
+                    $result_reports = $conn->prepare($query_reports);
+                    $result_reports->execute();
 
-                      if(($result_transacs) and ($result_transacs->rowCount() != 0)){
+                      if(($result_reports) and ($result_reports->rowCount() != 0)){
 
-                      while($row_transacs = $result_transacs->fetch(PDO::FETCH_ASSOC)) {
+                      while($row_reports = $result_reports->fetch(PDO::FETCH_ASSOC)) {
                     ?>
                     <tr>
-                      <td><?php echo $row_transacs['id']; ?></td>
-                      <td><?php echo $row_transacs['title']; ?></td>
-                      <td><?php echo $row_transacs['slug']; ?></td>
-                      <td><span class="tag tag-success"><?php echo $row_transacs['created_at']; ?></span></td>
-                      <td><a class="btn bg-gradient-info" href=<?php echo URLADMIN . "report-transacs/receipt.php?id=" . $row_transacs['id']; ?>" role="button"><i class="fa-solid fa-pen-to-square"></i> See Receipts</a></td>
+                      <td><?php echo $row_reports['id']; ?></td>
+                      <td><?php echo $row_reports['description']; ?></td>
+                      <td><?php echo $row_reports['amount']; ?></td>
+                      <td><span class="tag tag-success"><?php echo $row_reports['created_at']; ?></span></td>
+                      <td></td>
                     </tr>
                     <?php
                       }

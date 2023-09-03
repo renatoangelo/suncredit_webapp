@@ -45,14 +45,14 @@ include_once '../common/header.php';
             <!-- small box -->
             <div class="small-box bg-dark">
               <div class="inner">
-                <h3>1500</h3>
+                <h3>3345</h3>
 
-                <p>Visitas Geral</p>
+                <p>kWh</p>
               </div>
               <div class="icon">
                 <i class="far fa-eye"></i>
               </div>
-              <a href="#" class="small-box-footer">Estatísticas<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">Statistics<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

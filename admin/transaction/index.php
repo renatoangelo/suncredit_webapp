@@ -1,6 +1,32 @@
 <?php
 include("../include/default.php");
+
+$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+var_dump($dados);
+
+if(!empty($dados['trade'])) {
+  $query_trade = "UPDATE balance SET bal_kwh = (bal_kwh - :valueTransacted),
+  bal_coins = (bal_coins + :newValue)
+  WHERE user_id = 1";
+
+  $result_trade = $conn->prepare($query_trade);
+  $result_trade->bindParam(':valueTransacted', $dados['valueTransacted'], PDO::PARAM_INT);
+  $result_trade->bindParam(':newValue', $dados['newValue'], PDO::PARAM_INT);
+
+  if ($result_trade->execute()) {
+    $_SESSION['msg'] = "<p style='color: #32c330;text-align: center;font-weight: bold;'>Imóvel cadastrado com Sucesso!</p>";
+
+  } else {
+    $_SESSION['msg'] = "<p style='color: #ff0000;text-align: center;font-weight: bold;'>ERRO: Tente Novamente!</p>"; 
+  }
+
+} else {
+
+}
 ?>
+<style>
+
+</style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -36,7 +62,7 @@ include("../include/default.php");
         <div class="card card-primary">
           <!-- .card-header -->
           <div class="card-header">
-            <h3 class="card-title"><i class="fa-solid fa-house"></i> Listagem dos Veiculos</h3>
+            <h3 class="card-title">Trading</h3>
           </div>
           <!-- table start -->
           <!-- /.row -->
@@ -44,29 +70,25 @@ include("../include/default.php");
           <div class="col-12">
             <div class="card">
                 <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 100%;">
-                    <input type="text" name="table_search"  id="valueTransacted" class="form-control float-right" placeholder="Type desired amount">
-                    <input readonly type="text" name="table_search" id="newValue" class="form-control float-right">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        Trade
-                      </button>
+                <form method="POST" action="" class="form-post" >
+                <div class="input-group input-group-sm" style="width: 100%;">
+                    <input type="text" name="valueTransacted"  id="valueTransacted" class="form-control float-right" placeholder="Type desired amount">
+                    <input readonly type="text" name="newValue" id="newValue" class="form-control float-right">
                 </div>
-              </div>
-    <!-- /.content -->
+                <div class="input-group-append">
+                    <button type="submit" value="trade" name="trade" class="btn btn-default">
+                    Trade
+                    </button>
+                </div>
+                </form>
+                <!-- /.content -->
   </div>
+</div>
 
   <script>
         document.getElementById("valueTransacted").addEventListener("input", function(){
-        document.getElementById("newValue").value = parseInt(this.value) * 1000 + " EC";
+        document.getElementById("newValue").value = parseInt(this.value) * 1000;
     });
-
-  function calc_ec() {
-    let test = document.getElementById('valueTransacted').value;
-    console.log(test);
-    document.getElementById('newValue').value = parseInt(test) * 1000;
-  }
   </script>
 
   <?php  include("../common/footer.php"); ?>

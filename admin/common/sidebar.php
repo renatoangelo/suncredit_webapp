@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="../dashboard/index.php" class="brand-link">
       <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">FrotaSys</span>
+      <span class="brand-text font-weight-light">SunCredit</span>
     </a>
 
     <!-- Sidebar -->
@@ -26,24 +26,24 @@
                with font-awesome or any other icon font library -->
 
           <li class="nav-item">
-            <a href="../veiuclos/" class="nav-link">
+            <a href="../dashboard/index.php" class="nav-link">
               <i class="fa-solid fa-circle-notch"></i>
               <p>&nbsp;&nbsp; Dashboard</p>
             </a>
           </li>
 
                <li class="nav-item">
-            <a href="../veiculos/" class="nav-link">
+            <a href="../dashboard/index.php" class="nav-link">
             <!--<i class="nav-icon fas fa-file"></i>-->
             <i class="fa-solid fa-square-plus"></i>
-              <p>&nbsp;&nbsp; Buy</p>
+              <p>&nbsp;&nbsp; Buy Credits</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="../veiculos/" class="nav-link">
+            <a href="../dashboard/index.php" class="nav-link">
               <i class="fa-solid fa-square-minus"></i>
-              <p>&nbsp;&nbsp; Sell</p>
+              <p>&nbsp;&nbsp; Sell Credits</p>
             </a>
           </li>
 

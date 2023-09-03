@@ -17,12 +17,12 @@ include("../include/default.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">FrotaSystem</h1>
+            <h1 class="m-0">SunCredit</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="../dashboard/index.php">Home</a></li>
-              <li class="breadcrumb-item active">Carros</li>
+              <li class="breadcrumb-item active">Credits</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -37,7 +37,7 @@ include("../include/default.php");
         <div class="card card-primary">
           <!-- .card-header -->
           <div class="card-header">
-            <h3 class="card-title"><i class="fa-solid fa-house"></i> Listagem dos Veiculos</h3>
+            <h3 class="card-title"><i class="fa-solid fa-house"></i>My Transactions</h3>
           </div>
           <!-- table start -->
           <!-- /.row -->
@@ -45,7 +45,7 @@ include("../include/default.php");
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"><i class="fa-solid fa-list"></i> Listagem</h3>
+                <h3 class="card-title"><i class="fa-solid fa-list"></i> List</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -65,10 +65,10 @@ include("../include/default.php");
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Título</th>
+                      <th>Details</th>
                       <th>Slug</th>
                       <th>Data Cadastro</th>
-                      <th>Ações</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -87,8 +87,7 @@ include("../include/default.php");
                       <td><?php echo $row_imoveis['title']; ?></td>
                       <td><?php echo $row_imoveis['slug']; ?></td>
                       <td><span class="tag tag-success"><?php echo $row_imoveis['created_at']; ?></span></td>
-                      <td><a class="btn bg-gradient-info" href=<?php echo URLADMIN . "imoveis/edit.php?id=" . $row_imoveis['id']; ?>" role="button"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
-                      <a class="btn bg-gradient-danger" href="../veiculos/delete.php?id=<?php echo $row_imoveis['id']; ?>" role="button"><i class="fa-solid fa-trash"></i> Excluir</a></td>
+                      <td><a class="btn bg-gradient-info" href=<?php echo URLADMIN . "imoveis/edit.php?id=" . $row_imoveis['id']; ?>" role="button"><i class="fa-solid fa-pen-to-square"></i> See Receipts</a></td>
                     </tr>
                     <?php
                       }

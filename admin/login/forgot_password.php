@@ -130,28 +130,28 @@ if(!empty($dados['recovery'])) {
 
     if ($result_update_user->execute()) {
 
-      $link = "http://renatoangelo.com.br/frotasys/admin/login/update_password.php?key=$recovery_key";
+      $link = "http://devinsider.com.br/suncredit/admin/login/update_password.php?key=$recovery_key";
 
       try {
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();
-        $mail->Host       = 'mail.renatoangelo.com.br';
+        $mail->Host       = 'mail.devinsider.com.br';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'send@renatoangelo.com.br';
+        $mail->Username   = 'send@devinsider.com.br';
         $mail->Password   = '@Send1234*';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = 465;
 
-        $mail->setFrom('send@renatoangelo.com.br', 'Renato Angelo');
+        $mail->setFrom('send@devinsider.com.br', 'Renato Angelo');
         $mail->addAddress($row_user['email'], $row_user['name']);
 
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
-        $mail->Subject = 'Recuperação de Senha FrotaSystem';
-        $mail->Body    = 'Prezado (a) ' . $row_user['name'] . '.<br><Br>
-        Você solicitou alteração de senha.<br><br>
-        Para continuar o processo de recuperação de senha, clique no link abaixo ou cole o endereço no seu navegador: <br><Br><a href="' . $link . '">' . $link . '</a>';
-        $mail->AltBody = 'acesse: ' . $link;
+        $mail->Subject = 'Password Recovey SunCredit';
+        $mail->Body    = 'Dear User ' . $row_user['name'] . '.<br><Br>
+        You request about a password change<br><br>
+        To do this, click on the link below or copy and past in your browser: <br><Br><a href="' . $link . '">' . $link . '</a>';
+        $mail->AltBody = 'access: ' . $link;
 
         $mail->send();
 
@@ -172,7 +172,7 @@ if(!empty($dados['recovery'])) {
 
     
   } else {
-    $msg_output = "<p style='color: #32c330;text-align: center;font-weight: bold;'>Caso o email seja encontrado, você receberá instruções em sua caixa de entrada</p>";
+    $msg_output = "<p style='color: #32c330;text-align: center;font-weight: bold;'>If your email be in our database, you will receive an email in your mailbox</p>";
   }
 
 }

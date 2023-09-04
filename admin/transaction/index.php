@@ -14,21 +14,52 @@ if(!empty($dados['trade'])) {
   $result_trade->bindParam(':newValue', $dados['newValue'], PDO::PARAM_INT);
 
   if ($result_trade->execute()) {
-    $_SESSION['msg'] = "<p style='color: #32c330;text-align: center;font-weight: bold;'>Imóvel cadastrado com Sucesso!</p>";
-
   } else {
-    $_SESSION['msg'] = "<p style='color: #ff0000;text-align: center;font-weight: bold;'>ERRO: Tente Novamente!</p>"; 
-  }
+ }
 
 } else {
 
 }
 ?>
-<style>
 
+<style>
+  .submit {
+    width: 40%;
+    justify-content: center;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    font-weight: 600;
+    background: #2ACD8B;
+    color: white;
+    border: none;
+  }
+
+  .inputs {
+    background-color: #1B0C30;
+    border-radius: 6px;
+    height: 56px;
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    border: none;
+    padding: 15px;
+  }
+
+  .input-select {
+    background-color: #1B0C30;
+    border-radius: 6px;
+    height: 56px;
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    border: none;
+    padding: 15px;
+  }
 </style>
+
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed dark-mode">
 <div class="wrapper">
 
 <?php include("../common/navbar.php"); ?>
@@ -58,37 +89,42 @@ if(!empty($dados['trade'])) {
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-
         <div class="card card-primary">
-          <!-- .card-header -->
-          <div class="card-header">
-            <h3 class="card-title">Trading</h3>
-          </div>
           <!-- table start -->
           <!-- /.row -->
-        <div class="row">
-          <div class="col-12">
             <div class="card">
                 <div class="card-tools">
                 <form method="POST" action="" class="form-post" >
-                <div class="input-group input-group-sm" style="width: 100%;">
-                    <input type="text" name="valueTransacted"  id="valueTransacted" class="form-control float-right" placeholder="Type desired amount">
-                    <input readonly type="text" name="newValue" id="newValue" class="form-control float-right">
+
+                <div class="input-group input-group-sm" style="width: 100%; margin: 12px;">
+                    <label for="trades">Choose an option: </label>
+
+                    <select class="input-select" name="trades" id="trades">
+                        <option value="0">kWh -> EC</option>
+                        <option value="1">EC -> Euro</option>
+                        <option value="2">Euro -> EC</option>
+                    </select>
+
+                    <div class="m-2 flex display-flex">    
+                        <input type="text" name="valueTransacted"  id="valueTransacted" class="form-control inputs" placeholder="Type desired amount">
+                    </div>
+                    <div class="m-2">
+                        <input readonly type="text" name="newValue" id="newValue" class="form-control inputs">
+                    </div>
                 </div>
-                <div class="input-group-append">
-                    <button type="submit" value="trade" name="trade" class="btn btn-default">
+                <div class="input-group-append m-3">
+                    <button type="submit" class="submit" value="trade" name="trade" class="btn btn-default">
                     Trade
                     </button>
                 </div>
                 </form>
                 <!-- /.content -->
-  </div>
-</div>
+            </div>
+
+  <?php  include("../common/footer.php"); ?>
 
   <script>
         document.getElementById("valueTransacted").addEventListener("input", function(){
         document.getElementById("newValue").value = parseInt(this.value) * 1000;
     });
   </script>
-
-  <?php  include("../common/footer.php"); ?>

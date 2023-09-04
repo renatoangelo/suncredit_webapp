@@ -12,7 +12,7 @@
     <meta property="og:image:type" content="image/jpg">
     <meta property="og:description" content="Feira de Empregabilidade que acontece para os alunos de Tecnologia dos Cursos Noturnos">
     <meta property="og:url" content="https://devinsider.com.br/workintech/" >
-    <meta property="og:site_name" content="WorkInTech - Feira da Empregabilidade" >
+    <meta property="og:site_name" content="SunCredit" >
     <meta property="og:title" content="Aproveite a Feira de Empregabilidade WorkInTech" >
 
 
@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     
 
-    <title>WorkInTech - Feira de Empregabilidade</title>
+    <title>SunCredit</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

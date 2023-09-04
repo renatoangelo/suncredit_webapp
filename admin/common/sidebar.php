@@ -33,7 +33,7 @@
           </li>
 
                <li class="nav-item">
-            <a href="../dashboard/index.php" class="nav-link">
+            <a href="../transaction/index.php" class="nav-link">
             <!--<i class="nav-icon fas fa-file"></i>-->
             <i class="fa-solid fa-square-plus"></i>
               <p>&nbsp;&nbsp; Buy Credits</p>
@@ -41,7 +41,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="../dashboard/index.php" class="nav-link">
+            <a href="../transaction/index.php" class="nav-link">
               <i class="fa-solid fa-square-minus"></i>
               <p>&nbsp;&nbsp; Sell Credits</p>
             </a>
